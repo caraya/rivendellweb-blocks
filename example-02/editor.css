@@ -2,9 +2,10 @@
  * Note that these styles are loaded *before* editor styles, so that
  * editor-specific styles using the same selectors will take precedence.
  */
-.wp-block-gutenberg-examples-example-02-stylesheets {
+.wp-block-rivendellweb-blocks-example-02 {
 	color: darkred;
 	background: #fcc;
 	border: 2px solid #c99;
 	padding: 20px;
+
 }

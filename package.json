@@ -10,10 +10,10 @@
 		"editor",
 		"Examples"
 	],
-	"homepage": "https://github.com/WordPress/gutenberg-examples/",
-	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
+	"homepage": "https://github.com/caraya/rivendellweb-blocks/",
+	"repository": "",
 	"bugs": {
-		"url": "https://github.com/WordPress/gutenberg-examples/issues"
+		"url": "https://github.com/caraya/rivendellweb-blocks/issues"
 	},
 	"devDependencies": {
 		"@wordpress/components": "^9.2.1",

@@ -1,10 +1,10 @@
 {
-	"name": "example-01",
+	"name": "example-02",
 	"version": "1.1.0",
 	"private": true,
-	"description": "Example 01",
+	"description": "example 02",
 	"author": "Carlos Araya",
-	"license": "MIT",
+	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",
 		"block"
@@ -12,7 +12,7 @@
 	"homepage": "",
 	"repository": "",
 	"bugs": {
-		"url": "https://example.io"
+		"url": "https://example.net"
 	},
 	"main": "build/index.js",
 	"devDependencies": {

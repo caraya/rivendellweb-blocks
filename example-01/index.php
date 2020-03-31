@@ -3,14 +3,16 @@
 /**
  * Plugin Name: Basic Block
  * Plugin URI: https://github.com/WordPress/rivendellweb-blocks
- * Description: This is a plugin demonstrating how to register new blocks for the Gutenberg editor.
- * Version: 1.1.0
- * Author: the Gutenberg Team
+ * Description: Basic block.
+ * Version: 0.0.1
+ * Author: Carlos Araya
  *
  * @package rivendellweb-blocks
  */
 
-defined( 'ABSPATH' ) || exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Load all translations for our plugin from the MO file.
