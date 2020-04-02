@@ -20,6 +20,7 @@ function rivendellweb_blocks_example_02_load_textdomain() {
 	load_plugin_textdomain( 'rivendellweb-blocks', false, basename( __DIR__ ) . '/languages' );
 }
 add_action( 'init', 'rivendellweb_blocks_example_02_load_textdomain' );
+
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
  * the corresponding context.
@@ -50,15 +51,17 @@ function rivendellweb_blocks_example_02_register_block() {
 	wp_register_style(
 		'rivendellweb-blocks-example-02',
 		plugins_url( 'style.css', __FILE__ ),
-		array( ),
+		array(),
 		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
 	);
 
-	register_block_type( 'rivendellweb-blocks/example-02-stylesheets', array(
-		'style' => 'rivendellweb-blocks-example-02',
-		'editor_style' => 'rivendellweb-blocks-example-02-editor',
-		'editor_script' => 'rivendellweb-blocks-example-02',
-	) );
+	register_block_type( 'rivendellweb-blocks/example-02-stylesheets',
+		array(
+			'style' => 'rivendellweb-blocks-example-02',
+			'editor_script' => 'rivendellweb-blocks-example-02',
+			'editor_style' => 'rivendellweb-blocks-example-02-editor',
+		)
+	);
 
   if ( function_exists( 'wp_set_script_translations' ) ) {
     /**
@@ -66,7 +69,7 @@ function rivendellweb_blocks_example_02_register_block() {
      * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
      * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
      */
-    wp_set_script_translations( 'rivendellweb-blocks-example-01', 'rivendellweb-blocks' );
+    wp_set_script_translations( 'rivendellweb-blocks-example-02', 'rivendellweb-blocks' );
   }
 
 }

@@ -2,8 +2,8 @@ import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/block-editor';
 
-registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
-	title: __( 'Example: Editable (ESNext)', 'gutenberg-examples' ),
+registerBlockType( 'rivendellweb-blocks/example-03', {
+	title: __( 'Example 03', 'rivendellweb-blocks' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {
@@ -38,7 +38,9 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	},
 	save: ( props ) => {
 		return (
-			<RichText.Content tagName="p" value={ props.attributes.content } />
+			<RichText.Content
+				tagName="p"
+				value={ props.attributes.content } />
 		);
 	},
 } );

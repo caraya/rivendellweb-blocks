@@ -1,7 +1,8 @@
 {
   "packages": [
     "example-01",
-    "example-02"
+    "example-02",
+    "example-03"
   ],
   "version": "independent"
 }

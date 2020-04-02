@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 include 'example-01/index.php';
 include 'example-02/index.php';
+include 'example-03/index.php';
+
 // include '03-editable-esnext/index.php';
 // include '04-controls-esnext/index.php';
 // include '05-recipe-card-esnext/index.php';
