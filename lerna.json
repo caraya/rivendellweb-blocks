@@ -2,7 +2,8 @@
   "packages": [
     "example-01",
     "example-02",
-    "example-03"
+    "example-03",
+    "example-04"
   ],
   "version": "independent"
 }

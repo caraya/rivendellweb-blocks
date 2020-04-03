@@ -3,8 +3,9 @@ import { InnerBlocks } from '@wordpress/block-editor';
 
 // Register block
 registerBlockType( 'rivendellweb-blocks/example-04', {
-	title: 'Example: Inner Blocks (ESNext)',
-	category: 'layout',
+	title: 'Example 04',
+	category: 'rivendellweb-blocks',
+	icon: 'translation',
 	edit: ( { className } ) => {
 		return (
 			<div className={ className }>

@@ -35,7 +35,3 @@ function rivendellweb_blocks_block_category( $categories, $post ) {
   );
 }
 add_filter( 'block_categories', 'rivendellweb_blocks_block_category', 10, 2);
-// include '03-editable-esnext/index.php';
-// include '04-controls-esnext/index.php';
-// include '05-recipe-card-esnext/index.php';
-// include '06-Rivendellweb Blocksblocks-esnext/indexrivendellweindexrivendellweb
