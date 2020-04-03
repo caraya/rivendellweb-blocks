@@ -10,7 +10,7 @@ const blockStyle = {
 registerBlockType( 'rivendellweb-blocks/example-01', {
 	title: __( 'Example 01', 'rivendellweb-blocks' ),
 	icon: 'universal-access-alt',
-	category: 'layout',
+	category: 'rivendellweb-blocks',
 	example: {},
 	edit() {
 		return (

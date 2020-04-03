@@ -27,7 +27,7 @@ function gutenberg_examples_06_esnext_register_block() {
 	$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
 
 	wp_register_script(
-		'gutenberg-examples-06-esnext',
+		'rivendellweb-blocks-example-04',
 		plugins_url( 'build/index.js', __FILE__ ),
 		$asset_file['dependencies'],
 		$asset_file['version'],
@@ -35,9 +35,9 @@ function gutenberg_examples_06_esnext_register_block() {
 	);
 
 	register_block_type(
-		'gutenberg-examples/example-06-esnext',
+		'rivendellweb-blocks/example-04',
 		[
-			'editor_script' => 'gutenberg-examples-06-esnext',
+			'editor_script' => 'rivendellweb-blocks-example-04',
 		]
 	);
 

@@ -1,7 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
 
-registerBlockType( 'gutenberg-examples/example-06-esnext', {
+registerBlockType( 'rivendellweb-blocks/example-04', {
 	title: 'Example: Inner Blocks (ESNext)',
 	category: 'layout',
 	edit: ( { className } ) => {

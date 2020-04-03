@@ -4,19 +4,19 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'rivendellweb-blocks/example-02', {
 	title: __( 'Example 02', 'rivendellweb-blocks' ),
 	icon: 'universal-access-alt',
-	category: 'layout',
+	category: 'rivendellweb-blocks',
 	example: {},
-	edit() {
+	edit( { className }) {
 		return (
-			<div>
+			<div className={ className }>
 				<h2>Notice</h2>
 				<p>Hello World, step 1 (from the editor).</p>
 			</div>
 		);
 	},
-	save() {
+	save( { className }) {
 		return (
-			<div>
+			<div className={ className }>
 				<h2>Notice</h2>
 				<p>Hello World, step 1 (from the front end).</p>
 			</div>

@@ -5,7 +5,7 @@ import { RichText } from '@wordpress/block-editor';
 registerBlockType( 'rivendellweb-blocks/example-03', {
 	title: __( 'Example 03', 'rivendellweb-blocks' ),
 	icon: 'universal-access-alt',
-	category: 'layout',
+	category: 'rivendellweb-blocks',
 	attributes: {
 		content: {
 			type: 'array',

@@ -3,8 +3,8 @@
  * editor-specific styles using the same selectors will take precedence.
  */
 .wp-block-rivendellweb-blocks-example-03-editable {
-	color: green;
-	background: #cfc;
-	border: 2px solid #9c9;
+	color: darkred;
+	background: #fcc;
+	border: 2px solid #c99;
 	padding: 20px;
 }
