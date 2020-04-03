@@ -26,6 +26,7 @@ function gutenberg_examples_06_esnext_register_block() {
 	// automatically load dependencies and version
 	$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
 
+	// register script
 	wp_register_script(
 		'rivendellweb-blocks-example-04',
 		plugins_url( 'build/index.js', __FILE__ ),
@@ -34,6 +35,7 @@ function gutenberg_examples_06_esnext_register_block() {
 		true
 	);
 
+	// register block type
 	register_block_type(
 		'rivendellweb-blocks/example-04',
 		[
