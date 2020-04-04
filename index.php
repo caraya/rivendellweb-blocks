@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-include 'example-01/index.php';
-include 'example-02/index.php';
-include 'example-03/index.php';
-include 'example-04/index.php';
-
 function rivendellweb_blocks_block_category( $categories, $post ) {
   if ( $post->post_type !== 'post' ) {
       return $categories;
@@ -26,12 +21,19 @@ function rivendellweb_blocks_block_category( $categories, $post ) {
   return array_merge(
     $categories,
     array(
-        array(
-            'slug' => 'rivendellweb-blocks',
-            'title' => __( 'Rivendellweb Blocks', 'rivendellweb-blocks' ),
-            'icon'  => 'wordpress',
-        ),
+      array(
+        'slug' => 'rivendellweb-blocks',
+        'title' => __( 'Rivendellweb Blocks', 'rivendellweb-blocks' ),
+        'icon'  => 'wordpress',
+      ),
     )
   );
 }
 add_filter( 'block_categories', 'rivendellweb_blocks_block_category', 10, 2);
+
+
+include 'example-01/index.php';
+include 'example-02/index.php';
+include 'example-03/index.php';
+include 'example-04/index.php';
+include 'example-05/index.php';
