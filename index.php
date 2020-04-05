@@ -37,3 +37,4 @@ include 'example-02/index.php';
 include 'example-03/index.php';
 include 'example-04/index.php';
 include 'example-05/index.php';
+include 'example-06/index.php';

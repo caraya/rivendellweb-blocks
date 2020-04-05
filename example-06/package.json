@@ -1,0 +1,27 @@
+{
+	"name": "example-06",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Example 06",
+	"author": "carlos araya",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"block"
+	],
+	"homepage": "https://github.com/caraya/rivendellweb-blocks/",
+	"repository": "git+https://github.com/caraya/rivendellweb-blocks.git",
+	"bugs": {
+		"url": "https://github.com/caraya/rivendellweb-blocks/issues"
+	},
+	"main": "build/index.js",
+	"devDependencies": {
+		"@wordpress/scripts": "^7.1.1"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"format:js": "wp-scripts format-js",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start"
+	}
+}
