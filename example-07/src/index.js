@@ -11,32 +11,14 @@ import {
   getColorClassName
 } from '@wordpress/block-editor';
 
-import {
-  TextControl,
-  ToggleControl,
-  Panel,
-  PanelBody,
-  PanelRow,
-  ColorPicker
-} from '@wordpress/components'
+// import {
+//   TextControl,
+//   ToggleControl,
+//   Panel,
+//   PanelBody,
+//   PanelRow,
+// } from '@wordpress/components'
 
-const colorSamples = [
-  {
-    name: 'Coral',
-    slug: 'coral',
-    color: '#FF7F50'
-  },
-  {
-    name: 'Lavender',
-    slug: 'lavender',
-    color: '#E6E6FA'
-  },
-  {
-    name: 'White',
-    slug: 'white',
-    color: '#ffffff'
-  }
-];
 
 registerBlockType( 'rivendellweb-blocks/example-07', {
   title: __( 'Example  07', 'rivendellweb-blocks' ),
@@ -44,19 +26,21 @@ registerBlockType( 'rivendellweb-blocks/example-07', {
   category: 'rivendellweb-blocks',
   attributes: {
     content: {
-        type: 'array',
-        source: 'children',
-        selector: 'p',
+      type: 'array',
+      source: 'children',
+      selector: 'p',
     },
     alignment: {
-        type: 'string',
-        default: 'none',
-    },
-    formColor: { // something
       type: 'string',
+      default: 'none',
     },
-    customFormColor: { // customSomething
+    textColor: {
       type: 'string',
+      default: '#000',
+    },
+    backgroundColor: {
+      type: 'string',
+      default: '#fff',
     },
 },
 example: {
@@ -70,70 +54,82 @@ edit: ( props ) => {
         attributes: {
             content,
             alignment,
+            textColor,
+            backgroundColor,
         },
         className,
     } = props;
 
     const onChangeContent = ( newContent ) => {
-        props.setAttributes( { content: newContent } );
+      props.setAttributes( { content: newContent } );
     };
 
     const onChangeAlignment = ( newAlignment ) => {
-        props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
+      props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
     };
 
+    const onChangeTextColor = ( newColor ) => {
+      props.setAttributes( { color: newColor } )
+    };
+
+    const onChangeBackgroundColor = ( newColor ) => {
+      props.setAttributes( { backgroundColor: newColor } )
+    }
+
     return (
-        <div>
-            {
+      <div>
+        {
 
-            }
-            {
-                <InspectorControls>
-                    <PanelBody
-                      title = { __( 'Text Size', 'rivendellweb-blocks') }
-                      initialOpen = { true }>
+        }
+        {
+            <InspectorControls>
+                <PanelBody
+                  title = { __( 'Text Size', 'rivendellweb-blocks') }
+                  initialOpen = { true }>
 
-                      <FontSizePicker />
-                    </PanelBody>
+                  <FontSizePicker />
+                </PanelBody>
 
-                    <PanelBody
-                      title = { __( 'Text Color', 'rivendellweb-blocks') }
-                      initialOpen = { true }>
-
-
-                      <ColorPicker />
-
-                    </PanelBody>
-
-                    <PanelBody
-                      title = { __( 'Background Color', 'rivendellweb-blocks') }
-                      initialOpen = { false }>
-
-                      <ColorPicker />
-
-                    </PanelBody>
-
-                </InspectorControls>
-            }
-            {
-                <BlockControls>
-                    <AlignmentToolbar
-                        value={ alignment }
-                        onChange={ onChangeAlignment }
-                    />
+                <PanelBody
+                  title = { __( 'Text Color', 'rivendellweb-blocks') }
+                  initialOpen = { true }>
 
 
-                </BlockControls>
-            }
-            <RichText
-                className={ className }
-                style={ { textAlign: alignment } }
-                tagName="p"
-                onChange={ onChangeContent }
-                value={ content }
-            />
-        </div>
-    );
+                  <ColorPicker
+                    color= { textColor }/>
+
+                </PanelBody>
+
+                <PanelBody
+                  title = { __( 'Background Color', 'rivendellweb-blocks') }
+                  initialOpen = { false }>
+
+                  <ColorPicker
+                  color = { backgroundColor }/>
+
+                </PanelBody>
+
+            </InspectorControls>
+        }
+        {
+            <BlockControls>
+                <AlignmentToolbar
+                    value={ alignment }
+                    onChange={ onChangeAlignment }
+                />
+
+
+            </BlockControls>
+        }
+        <RichText
+            className={ className }
+            style={ { textAlign: alignment } }
+            tagName="p"
+            onChange={ onChangeContent }
+            value={ content }
+        />
+    </div>
+  );
 },
 save: ( props ) => {
     return (
