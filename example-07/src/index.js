@@ -4,7 +4,8 @@ import { registerBlockType } from '@wordpress/blocks';
 import {
 	RichText,
 	AlignmentToolbar,
-	BlockControls,
+  BlockControls,
+  InspectorControls,
 } from '@wordpress/block-editor';
 
 registerBlockType( 'rivendellweb-blocks/example-07', {
@@ -53,7 +54,10 @@ registerBlockType( 'rivendellweb-blocks/example-07', {
 							onChange={ onChangeAlignment }
 						/>
 					</BlockControls>
-				}
+        }
+        {
+          <InspectorControls />
+        }
 				<RichText
 					className={ className }
 					style={ { textAlign: alignment } }
