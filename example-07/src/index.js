@@ -1,56 +1,47 @@
+import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
+
 import {
-  RichText,
-  BlockControls,
-  AlignmentToolbar,
-	InspectorControls,
-	ColorPalette } from '@wordpress/block-editor';
+	RichText,
+	AlignmentToolbar,
+	BlockControls,
+} from '@wordpress/block-editor';
 
 registerBlockType( 'rivendellweb-blocks/example-07', {
-	title: 'Example 07',
+	title: __( 'Example 07', 'rivendellweb-blocks' ),
 	icon: 'smiley',
-	category: 'layout',
+	category: 'rivendellweb-blocks',
 	attributes: {
 		content: {
 			type: 'array',
 			source: 'children',
-			selector: 'p'
+			selector: 'p',
 		},
-		contentStyle: {
-			type: 'object',
-			default: {
-        color: 'black',
-				textAlign: 'left'
-			}
-		}
+		alignment: {
+			type: 'string',
+			default: 'none',
+		},
+	},
+	example: {
+		attributes: {
+			content: __( 'Hello world' ),
+			alignment: 'right',
+		},
 	},
 	edit: ( props ) => {
-		console.log( 'edit-props', props );
-		let { attributes: { content, contentStyle }, setAttributes, className } = props;
+		const {
+			attributes: { content, alignment },
+			className,
+		} = props;
 
 		const onChangeContent = ( newContent ) => {
-			setAttributes( { content: newContent } );
+			props.setAttributes( { content: newContent } );
 		};
 
 		const onChangeAlignment = ( newAlignment ) => {
-			let alignmentValue = ( newAlignment === undefined ) ? 'none' : newAlignment;
-			setAttributes( {
-				contentStyle: {
-					color: contentStyle.color,
-					textAlign: alignmentValue
-				}
+			props.setAttributes( {
+				alignment: newAlignment === undefined ? 'none' : newAlignment,
 			} );
-		};
-
-		const onChangeTextColor = ( newColor ) => {
-			let newColorValue = ( newColor === undefined ) ? 'none' : newColor;
-			setAttributes( {
-				contentStyle: {
-					color: newColorValue,
-					textAlign: contentStyle.textAlign
-				}
-      } );
-
 		};
 
 		return (
@@ -58,22 +49,15 @@ registerBlockType( 'rivendellweb-blocks/example-07', {
 				{
 					<BlockControls>
 						<AlignmentToolbar
-							value={ contentStyle.textAlign }
+							value={ alignment }
 							onChange={ onChangeAlignment }
 						/>
 					</BlockControls>
 				}
-				{
-					<InspectorControls>
-						<ColorPalette // Element Tag for Gutenberg standard colour selector
-							onChange={onChangeTextColor} // onChange event callback
-						/>
-					</InspectorControls>
-				}
 				<RichText
-					tagName="p"
-					style={ contentStyle }
 					className={ className }
+					style={ { textAlign: alignment } }
+					tagName="p"
 					onChange={ onChangeContent }
 					value={ content }
 				/>
@@ -81,9 +65,12 @@ registerBlockType( 'rivendellweb-blocks/example-07', {
 		);
 	},
 	save: ( props ) => {
-		console.log( 'save-props', props );
 		return (
-			<RichText.Content style={ props.attributes.contentStyle } tagName="p" value={ props.attributes.content } />
+			<RichText.Content
+				className={ `gutenberg-examples-align-${ props.attributes.alignment }` }
+				tagName="p"
+				value={ props.attributes.content }
+			/>
 		);
-	}
+	},
 } );
