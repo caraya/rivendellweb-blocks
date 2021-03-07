@@ -15,10 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function rivendellweb_blocks_block_category( $categories, $post ) {
-  if ( $post->post_type !== 'post' ) {
-      return $categories;
-  }
-  return array_merge(
+	// DO I NEED THIS IF I'M WORKING WITH CUSTOM BLOCKS?
+  // if ( ( $post->post_type !== 'post' ||
+	// 			 $post->post_type !== 'essay' ||
+	// 			 $post->post_type !== 'book' ) ) {
+  //     return $categories;
+  // }
+
+	return array_merge(
     $categories,
     array(
       array(
@@ -31,11 +35,9 @@ function rivendellweb_blocks_block_category( $categories, $post ) {
 }
 add_filter( 'block_categories', 'rivendellweb_blocks_block_category', 10, 2);
 
-
 include 'example-01/index.php';
 include 'example-02/index.php';
 include 'example-03/index.php';
 include 'example-04/index.php';
 include 'example-05/index.php';
 include 'example-06/index.php';
-include 'example-07/index.php';
