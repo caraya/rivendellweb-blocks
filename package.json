@@ -16,9 +16,9 @@
 		"url": "https://github.com/caraya/rivendellweb-blocks/issues"
 	},
 	"devDependencies": {
-		"@wordpress/components": "^9.2.1",
-		"@wordpress/scripts": "^7.1.1",
-		"lerna": "^3.20.2"
+		"@wordpress/components": "^9.9.0",
+		"@wordpress/scripts": "^7.2.0",
+		"lerna": "^3.22.1"
 	},
 	"scripts": {
 		"build": "lerna run build",

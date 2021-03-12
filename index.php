@@ -41,3 +41,6 @@ include 'example-03/index.php';
 include 'example-04/index.php';
 include 'example-05/index.php';
 include 'example-06/index.php';
+include 'example-07/index.php';
+// Patterns
+include 'patterns-01/index.php';

@@ -4,7 +4,7 @@
 	"private": true,
 	"description": "Example 06",
 	"author": "carlos araya",
-	"license": "GPL-2.0-or-later",
+	"license": "MIT",
 	"keywords": [
 		"WordPress",
 		"block"
