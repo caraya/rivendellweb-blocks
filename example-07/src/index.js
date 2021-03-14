@@ -33,8 +33,7 @@ registerBlockType( 'rivendellweb-blocks/example-07', {
     return (
       <div className={ className }>
         <InnerBlocks
-        template={ BLOCKS_TEMPLATE }
-        templateLock="all" />
+        template={ BLOCKS_TEMPLATE } />
       </div>
     );
   },
